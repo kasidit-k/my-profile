@@ -22,12 +22,6 @@
                         heading: ['"Prompt"', '"IBM Plex Sans Thai"', 'sans-serif'],
                     },
                     colors: {
-                        emerald: {
-                            400: '#34d399',
-                            500: '#10b981',
-                            600: '#059669',
-                            700: '#047857',
-                        },
                         slate: {
                             850: '#151e2e',
                             900: '#0f172a',
@@ -42,16 +36,16 @@
     <style>
         /* สไตล์เสริมสำหรับโหมดแก้ไขข้อความ (Quick Edit Mode) */
         .edit-mode-active [data-editable="true"] {
-            outline: 2px dashed #10b981;
+            outline: 2px dashed #3b82f6;
             outline-offset: 4px;
             border-radius: 0.5rem;
-            background-color: rgba(16, 185, 129, 0.06);
+            background-color: rgba(59, 130, 246, 0.08);
             cursor: text;
             transition: all 0.2s ease;
         }
         .edit-mode-active [data-editable="true"]:focus {
-            outline: 2px solid #059669;
-            background-color: rgba(16, 185, 129, 0.12);
+            outline: 2px solid #2563eb;
+            background-color: rgba(59, 130, 246, 0.15);
         }
         /* แอนิเมชันนุ่มนวลสำหรับการ์ด */
         .card-hover {
@@ -62,10 +56,10 @@
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-emerald-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 antialiased selection:bg-blue-600 selection:text-white">
 
     <!-- =====================================================================
-         SECTION: NAVBAR (แถบนำทางด้านบน + ปุ่มโหมดแก้ไข + สลับธีม Light/Dark)
+         SECTION: NAVBAR (แถบนำทางด้านบน + สลับธีม Light/Dark)
          ===================================================================== -->
     <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/85 dark:bg-slate-900/85 border-b border-slate-200/80 dark:border-slate-800 transition-colors">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,14 +67,14 @@
                 
                 <!-- โลโก้ / ชื่อเว็บส่วนตัว -->
                 <a href="#home" class="flex items-center gap-2.5 group focus:outline-none">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-slate-800 flex items-center justify-center text-white font-heading font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 flex items-center justify-center text-white font-heading font-bold text-lg shadow-md shadow-blue-500/25 group-hover:scale-105 transition-transform">
                         ME
                     </div>
                     <div class="flex flex-col">
                         <span data-editable="true" data-key="nav-brand" class="font-heading font-bold text-base sm:text-lg tracking-tight text-slate-900 dark:text-white leading-none">
                             MY PERSONAL HUB
                         </span>
-                        <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium mt-0.5">
+                        <span class="text-[11px] text-blue-600 dark:text-cyan-400 font-medium mt-0.5">
                             พื้นที่ส่วนตัว & ไลฟ์สไตล์
                         </span>
                     </div>
@@ -88,17 +82,16 @@
 
                 <!-- เมนูนำทาง (Desktop) -->
                 <nav class="hidden md:flex items-center gap-1 lg:gap-2">
-                    <a href="#home" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-emerald-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-emerald-400 dark:hover:bg-slate-800/70 transition-colors">หน้าแรก</a>
-                    <a href="#about" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-emerald-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-emerald-400 dark:hover:bg-slate-800/70 transition-colors">ประวัติส่วนตัว</a>
-                    <a href="#interests" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-emerald-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-emerald-400 dark:hover:bg-slate-800/70 transition-colors">สิ่งที่สนใจ</a>
-                    <a href="#contact" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-emerald-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-emerald-400 dark:hover:bg-slate-800/70 transition-colors">ช่องทางติดต่อ</a>
+                    <a href="#home" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-cyan-400 dark:hover:bg-slate-800/70 transition-colors">หน้าแรก</a>
+                    <a href="#about" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-cyan-400 dark:hover:bg-slate-800/70 transition-colors">ประวัติส่วนตัว</a>
+                    <a href="#interests" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-cyan-400 dark:hover:bg-slate-800/70 transition-colors">สิ่งที่สนใจ</a>
+                    <a href="#contact" class="px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-cyan-400 dark:hover:bg-slate-800/70 transition-colors">ช่องทางติดต่อ</a>
                 </nav>
 
-                
-
+                <div class="flex items-center gap-2">
                     <!-- ปุ่มสลับธีม Light / Dark -->
                     <button id="themeToggleBtn" onclick="toggleTheme()" type="button" aria-label="สลับโหมดสีหน้าจอ"
-                        class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 shadow-sm transition-all cursor-pointer">
+                        class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-cyan-400 shadow-sm transition-all cursor-pointer">
                         <!-- ไอคอนพระอาทิตย์ (แสดงตอน Dark Mode) -->
                         <svg id="sunIcon" class="w-5 h-5 hidden dark:block text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
@@ -121,10 +114,10 @@
 
             <!-- เมนูนำทางสำหรับมือถือ (Mobile Dropdown) -->
             <div id="mobileMenu" class="hidden md:hidden pb-4 pt-2 border-t border-slate-100 dark:border-slate-800 space-y-1">
-                <a href="#home" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">หน้าแรก</a>
-                <a href="#about" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">ประวัติส่วนตัว</a>
-                <a href="#interests" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">สิ่งที่สนใจ</a>
-                <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-slate-800">ช่องทางติดต่อ</a>
+                <a href="#home" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">หน้าแรก</a>
+                <a href="#about" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">ประวัติส่วนตัว</a>
+                <a href="#interests" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">สิ่งที่สนใจ</a>
+                <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">ช่องทางติดต่อ</a>
             </div>
         </div>
     </header>
@@ -135,48 +128,36 @@
              SECTION: HERO (ส่วนแนะนำตัวหลัก)
              ===================================================================== -->
         <section id="home" class="relative overflow-hidden pt-12 pb-16 sm:pt-20 sm:pb-24">
-            <!-- ลวดลายพื้นหลังแบบมินิมอล -->
+            <!-- ลวดลายพื้นหลังแบบเทคโนโลยีมินิมอล -->
             <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-                <div class="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-emerald-500/10 dark:bg-emerald-500/10 blur-3xl"></div>
-                <div class="absolute top-32 -left-24 w-80 h-80 rounded-full bg-slate-400/10 dark:bg-slate-700/20 blur-3xl"></div>
+                <div class="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-blue-500/15 dark:bg-blue-500/15 blur-3xl"></div>
+                <div class="absolute top-32 -left-24 w-80 h-80 rounded-full bg-cyan-400/10 dark:bg-cyan-500/10 blur-3xl"></div>
             </div>
 
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
                     
-                    <!-- รูปโปรไฟล์แบบวงกลม (Minimalist SVG Avatar + สัญลักษณ์ฟุตบอล) -->
+                    <!-- รูปโปรไฟล์แบบวงกลม (ปรับขนาดทั้งกรอบและรูปพร้อมกันได้ที่บรรทัดด้านล่าง) -->
                     <div class="relative flex-shrink-0">
-                        <div class="w-44 h-44 sm:w-56 sm:h-56 rounded-full p-2 bg-gradient-to-tr from-emerald-500 via-teal-400 to-slate-800 shadow-xl">
+                        <div class="w-44 h-44 sm:w-56 sm:h-56 rounded-full p-2 bg-gradient-to-tr from-blue-600 via-cyan-400 to-slate-800 shadow-xl shadow-blue-500/20">
                             <div class="w-full h-full rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden flex items-center justify-center relative">
-                                <!-- ภาพประกอบโปรไฟล์สไตล์มินิมอล (SVG คมชัดทุกขนาดหน้าจอ) -->
-                                <img>
-                                <!-- รูปโปรไฟล์แบบวงกลม -->
-                                    <div class="relative flex-shrink-0">
-                                    <!-- บรรทัดล่างนี้คือตัวคุมขนาดของทั้งกรอบและรูปพร้อมกัน -->
-                                    <div class="w-44 h-44 sm:w-56 sm:h-56 rounded-full p-2 bg-gradient-to-tr from-emerald-500 via-teal-400 to-slate-800 shadow-xl">
-                                        <div class="w-full h-full rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden flex items-center justify-center relative">
-                                        <img src="img/pro.jpg" alt="รูปโปรไฟล์" class="w-full h-full object-cover object-center">
-                                        </div>
-                                    </div>
-                                    </div>
-                                </img>
+                                <img src="img/pro.jpg" alt="รูปโปรไฟล์" class="w-full h-full object-cover object-center">
                             </div>
                         </div>
-                        
                     </div>
 
                     <!-- ข้อความแนะนำตัวหลัก -->
                     <div class="flex-1 text-center lg:text-left">
                         <!-- ป้ายสถานะ (Badge) -->
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-medium mb-5">
-                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 dark:bg-blue-500/15 border border-blue-500/25 text-blue-700 dark:text-cyan-300 text-xs sm:text-sm font-medium mb-5">
+                            <span class="w-2 h-2 rounded-full bg-blue-600 dark:bg-cyan-400"></span>
                             <span data-editable="true" data-key="hero-badge">ยินดีต้อนรับสู่พื้นที่ส่วนตัวของผม</span>
                         </div>
 
                         <!-- ชื่อ-นามสกุล / นามแฝง -->
                         <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
                             Halo Bro <br class="sm:hidden">
-                            <span data-editable="true" data-key="hero-name" class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">
+                            <span data-editable="true" data-key="hero-name" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">
                                 I'm Kasidit or James
                             </span>
                         </h1>
@@ -188,7 +169,7 @@
 
                         <!-- ปุ่มนำทางหลัก -->
                         <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
-                            <a href="#about" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm sm:text-base shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2">
+                            <a href="#about" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm sm:text-base shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center gap-2">
                                 <span>ทำความรู้จักประวัติของผม</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -205,7 +186,6 @@
 
         <!-- =====================================================================
              SECTION 1: BIO & PROFILE (ประวัติส่วนตัว & เส้นทางชีวิต)
-             * โครงสร้างแบบ Modular สามารถเพิ่มการ์ดข้อมูลหรือรายการ Timeline ได้ง่าย
              ===================================================================== -->
         <section id="about" class="py-16 sm:py-24 bg-white dark:bg-slate-900/60 border-y border-slate-200/70 dark:border-slate-800/80">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -213,7 +193,7 @@
                 <!-- หัวข้อ Section -->
                 <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">ABOUT ME</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-cyan-400">ABOUT ME</span>
                         <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">
                             ประวัติส่วนตัว & ตัวตนของผม
                         </h2>
@@ -228,7 +208,7 @@
                     <!-- การ์ด 1: ชื่อเล่น -->
                     <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/70 card-hover">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">🪪</span>
+                            <span class="w-9 h-9 rounded-xl bg-blue-500/15 text-blue-600 dark:text-cyan-400 flex items-center justify-center text-lg">🪪</span>
                             <span class="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-400">ชื่อจริง/ชื่อเล่น</span>
                         </div>
                         <p data-editable="true" data-key="bio-nickname" class="font-heading text-lg font-semibold text-slate-900 dark:text-white">
@@ -239,7 +219,7 @@
                     <!-- การ์ด 2: วันเกิด / อายุ -->
                     <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/70 card-hover">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">🎂</span>
+                            <span class="w-9 h-9 rounded-xl bg-blue-500/15 text-blue-600 dark:text-cyan-400 flex items-center justify-center text-lg">🎂</span>
                             <span class="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-400">วัน/เดือน/ปีเกิด</span>
                         </div>
                         <p data-editable="true" data-key="bio-age" class="font-heading text-lg font-semibold text-slate-900 dark:text-white">
@@ -250,7 +230,7 @@
                     <!-- การ์ด 3: จังหวัด / ที่อยู่ -->
                     <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/70 card-hover">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">📍</span>
+                            <span class="w-9 h-9 rounded-xl bg-blue-500/15 text-blue-600 dark:text-cyan-400 flex items-center justify-center text-lg">📍</span>
                             <span class="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-400">จังหวัด / ภูมิลำเนา</span>
                         </div>
                         <p data-editable="true" data-key="bio-location" class="font-heading text-lg font-semibold text-slate-900 dark:text-white">
@@ -261,7 +241,7 @@
                     <!-- การ์ด 4: อาชีพ / การศึกษา -->
                     <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/70 card-hover">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">💼</span>
+                            <span class="w-9 h-9 rounded-xl bg-blue-500/15 text-blue-600 dark:text-cyan-400 flex items-center justify-center text-lg">💼</span>
                             <span class="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-400">อาชีพ / การศึกษา</span>
                         </div>
                         <p data-editable="true" data-key="bio-role" class="font-heading text-lg font-semibold text-slate-900 dark:text-white">
@@ -272,7 +252,7 @@
                     <!-- การ์ด 5: บุคลิก / สไตล์ -->
                     <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/70 card-hover">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">⚡</span>
+                            <span class="w-9 h-9 rounded-xl bg-blue-500/15 text-blue-600 dark:text-cyan-400 flex items-center justify-center text-lg">⚡</span>
                             <span class="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-400">สไตล์ส่วนตัว</span>
                         </div>
                         <p data-editable="true" data-key="bio-vibe" class="font-heading text-lg font-semibold text-slate-900 dark:text-white">
@@ -283,10 +263,10 @@
                     <!-- การ์ด 6: คติประจำใจ -->
                     <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/70 card-hover">
                         <div class="flex items-center gap-3 mb-2">
-                            <span class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">💬</span>
+                            <span class="w-9 h-9 rounded-xl bg-blue-500/15 text-blue-600 dark:text-cyan-400 flex items-center justify-center text-lg">💬</span>
                             <span class="text-xs font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-400">คติประจำใจ</span>
                         </div>
-                        <p data-editable="true" data-key="bio-motto" class="font-heading text-base font-semibold text-emerald-700 dark:text-emerald-400">
+                        <p data-editable="true" data-key="bio-motto" class="font-heading text-base font-semibold text-blue-700 dark:text-cyan-400">
                             นอนไปเหอะ เดี๋ยวก็นอนต่ออยู๋ดี
                         </p>
                     </div>
@@ -297,7 +277,7 @@
                     <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
                         <div>
                             <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                                <span class="w-2.5 h-6 rounded-full bg-emerald-500 inline-block"></span>
+                                <span class="w-2.5 h-6 rounded-full bg-blue-600 dark:bg-cyan-400 inline-block"></span>
                                 เส้นทางชีวิต & ประสบการณ์ (Timeline)
                             </h3>
                             <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
@@ -307,18 +287,21 @@
                     </div>
 
                     <!-- รายการ Timeline -->
-                    <div id="timelineContainer" class="relative border-l-2 border-emerald-500/30 dark:border-emerald-500/40 ml-3 sm:ml-4 space-y-8">
+                    <div id="timelineContainer" class="relative border-l-2 border-blue-500/30 dark:border-blue-500/40 ml-3 sm:ml-4 space-y-8">
                         <!-- รายการที่ 1 -->
                         <div class="relative pl-6 sm:pl-8">
-                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-white dark:ring-slate-900"></span>
+                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-600 dark:bg-cyan-400 ring-4 ring-white dark:ring-slate-900"></span>
                             <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span data-editable="true" data-key="tl-year-1" class="px-2.5 py-0.5 rounded-lg bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-xs font-bold">
+                                <span data-editable="true" data-key="tl-year-1" class="px-2.5 py-0.5 rounded-lg bg-blue-500/15 text-blue-700 dark:text-cyan-300 text-xs font-bold">
                                     2025 - ปัจจุบัน
                                 </span>
                                 <h4 data-editable="true" data-key="tl-title-1" class="font-heading font-semibold text-base sm:text-lg text-slate-900 dark:text-white">
-                                    เข้าเรียนปริญญาตรี
+                                    การศึกษา ระดับปริญญาตรี
                                 </h4>
                             </div>
+                            <p data-editable="true" data-key="tl-desc-1" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                สาขาวิชาเทคโนโลยีอิเล็กทรอนิกส์ ภาควิชาเทคโนโลยีวิศวกรรมอิเล็กทรอนิกส์
+                            </p>
                             <p data-editable="true" data-key="tl-desc-1" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                                 มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ (King Mongkut's University of Technology North Bangkok)
                             </p>
@@ -332,12 +315,16 @@
                                     2022 - 2025
                                 </span>
                                 <h4 data-editable="true" data-key="tl-title-2" class="font-heading font-semibold text-base sm:text-lg text-slate-900 dark:text-white">
-                                    ทำงานบริษัท MinebeaMitsumi NMB-Thai
+                                    บริษัท MinebeaMitsumi NMB-Thai
                                 </h4>
                             </div>
                             <p data-editable="true" data-key="tl-desc-2" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                เข้าไปทำงานด้วยวุฒิ ปวส ตำแหน่ง ผู้ช่วย Engineer
+                                ตำแหน่ง ผู้ช่วย Engineer 
                             </p>
+                            <p data-editable="true" data-key="tl-desc-2" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                มีหน้าที่ ออกแบบ/เขียนแบบ ด้วยโปรแกรม Catia V5 ,คำนวณสูตร Fumular ด้วย Excel ,ดูแลฐานข้อมูล Tool ใน As-400
+                            </p>
+                            
                         </div>
 
                         <!-- รายการที่ 3 -->
@@ -345,14 +332,17 @@
                             <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
                             <div class="flex flex-wrap items-center gap-2 mb-1">
                                 <span data-editable="true" data-key="tl-year-2" class="px-2.5 py-0.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold">
-                                    2020 - 2022
+                                    2022 - 2022
                                 </span>
                                 <h4 data-editable="true" data-key="tl-title-2" class="font-heading font-semibold text-base sm:text-lg text-slate-900 dark:text-white">
-                                    สำเร็จการศึกษา ระดับ ปวส 1-2
+                                    บริษัท Honda Automobile (Thailand) co.ltd
                                 </h4>
                             </div>
                             <p data-editable="true" data-key="tl-desc-2" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                สาขา นักพัฒนาซอฟแวร์ แผนก อิเล็กหรอนิกส์ วิทยาลัยเทคนิคสุพรรณบุรี
+                                ตำแหน่ง ช่างเทคนิค
+                            </p>
+                            <p data-editable="true" data-key="tl-desc-2" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                มีหน้าที่ ผู้คุมเครื่องจักรการประกอบชิ้นส่วนรถยนต์ 
                             </p>
                         </div>
 
@@ -360,21 +350,52 @@
                         <div class="relative pl-6 sm:pl-8">
                             <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
                             <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span data-editable="true" data-key="tl-year-2" class="px-2.5 py-0.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold">
+                                <span data-editable="true" data-key="tl-year-3" class="px-2.5 py-0.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold">
+                                    2020 - 2022
+                                </span>
+                                <h4 data-editable="true" data-key="tl-title-3" class="font-heading font-semibold text-base sm:text-lg text-slate-900 dark:text-white">
+                                    สำเร็จการศึกษา ระดับ ปวส 1-2
+                                </h4>
+                            </div>
+                            <p data-editable="true" data-key="tl-desc-3" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                สาขา นักพัฒนาซอฟแวร์ แผนก อิเล็กหรอนิกส์ วิทยาลัยเทคนิคสุพรรณบุรี
+                            </p>
+                        </div>
+
+                        <!-- รายการที่ 5 -->
+                        <div class="relative pl-6 sm:pl-8">
+                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <span data-editable="true" data-key="tl-year-4" class="px-2.5 py-0.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold">
                                     2017 - 2020
                                 </span>
-                                <h4 data-editable="true" data-key="tl-title-2" class="font-heading font-semibold text-base sm:text-lg text-slate-900 dark:text-white">
+                                <h4 data-editable="true" data-key="tl-title-4" class="font-heading font-semibold text-base sm:text-lg text-slate-900 dark:text-white">
                                     สำเร็จการศึกษา ระดับ ปวช 1-3
                                 </h4>
                             </div>
-                            <p data-editable="true" data-key="tl-desc-2" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            <p data-editable="true" data-key="tl-desc-4" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                                 สาขา อิเล็กหรอนิกส์ แผนก อิเล็กหรอนิกส์ วิทยาลัยเทคนิคสุพรรณบุรี
                             </p>
                         </div>
 
+                        <!-- รายการที่ 6 -->
+                        <div class="relative pl-6 sm:pl-8">
+                            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <span data-editable="true" data-key="tl-year-4" class="px-2.5 py-0.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold">
+                                    2004 - 2017
+                                </span>
+                                <h4 data-editable="true" data-key="tl-title-4" class="font-heading font-semibold text-base sm:text-lg text-slate-900 dark:text-white">
+                                    สำเร็จการศึกษา ระดับ อนุบาล/ประถม/มัธยม
+                                </h4>
+                            </div>
+                            <p data-editable="true" data-key="tl-desc-4" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                โรงเรียน เซนต์เทเรซาแสงทอง • ST.Theresa Saengthong
+
+                            </p>
+                        </div>
 
 
-                       
                     </div>
                 </div>
 
@@ -383,7 +404,6 @@
 
         <!-- =====================================================================
              SECTION 2: INTERESTS & PASSIONS (สิ่งที่สนใจ - Modular Grid)
-             * มีตัวกรองหมวดหมู่ การ์ดเด่นเรื่องฟุตบอล และระบบเพิ่มสิ่งที่สนใจใหม่ได้จริง
              ===================================================================== -->
         <section id="interests" class="py-16 sm:py-24">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -391,7 +411,7 @@
                 <!-- หัวข้อ Section และ ตัวกรองหมวดหมู่ -->
                 <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">INTERESTS & PASSIONS</span>
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-cyan-400">INTERESTS & PASSIONS</span>
                         <h2 class="font-heading text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1">
                             สิ่งที่ผมสนใจ & ความหลงใหล
                         </h2>
@@ -427,20 +447,20 @@
                     <!-- =========================================================
                          FEATURED MODULE: การ์ดเด่นเรื่อง 'ฟุตบอล (Football)'
                          ========================================================= -->
-                    <article data-category="football" class="interest-card lg:col-span-2 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-850 to-emerald-950 text-white p-6 sm:p-8 lg:p-10 shadow-xl border border-emerald-500/30 relative overflow-hidden">
+                    <article data-category="football" class="interest-card lg:col-span-2 rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950 text-white p-6 sm:p-8 lg:p-10 shadow-xl shadow-blue-950/30 border border-blue-500/30 relative overflow-hidden">
                         <!-- เส้นสนามฟุตบอลตกแต่งพื้นหลังแบบจางๆ -->
-                        <div class="absolute right-0 top-0 w-72 h-72 border border-emerald-400/10 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+                        <div class="absolute right-0 top-0 w-72 h-72 border border-cyan-400/15 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
                         <div class="absolute right-12 bottom-6 text-8xl opacity-5 select-none pointer-events-none">⚽</div>
 
                         <div class="relative z-10">
                             <!-- หัวข้อการ์ดฟุตบอล -->
                             <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
                                 <div class="flex items-center gap-3.5">
-                                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-2xl sm:text-3xl">
+                                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-500/20 border border-cyan-400/30 flex items-center justify-center text-2xl sm:text-3xl">
                                         ⚽
                                     </div>
                                     <div>
-                                        <span class="px-2.5 py-0.5 rounded-md bg-emerald-500 text-slate-950 text-[11px] font-bold uppercase tracking-wider">
+                                        <span class="px-2.5 py-0.5 rounded-md bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-950 text-[11px] font-bold uppercase tracking-wider">
                                             MAIN PASSION • กีฬาโปรด
                                         </span>
                                         <h3 data-editable="true" data-key="fb-title" class="font-heading text-xl sm:text-2xl font-bold text-white mt-1">
@@ -448,7 +468,7 @@
                                         </h3>
                                     </div>
                                 </div>
-                                <span class="text-xs text-emerald-300/90 bg-emerald-950/80 border border-emerald-500/30 px-3 py-1.5 rounded-xl">
+                                <span class="text-xs text-cyan-300 bg-blue-950/80 border border-blue-500/30 px-3 py-1.5 rounded-xl">
                                     กีฬาที่เติบโตตั้งแต่เด็กๆ
                                 </span>
                             </div>
@@ -456,36 +476,36 @@
                             <!-- ข้อมูลโปรไฟล์สายบอล (4 ช่อง แก้ไขได้) -->
                             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 mb-6">
                                 <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                                    <span class="text-xs text-emerald-300 block mb-1">🛡️ ทีมสโมสรโปรด</span>
-                                    <div class="flex items-center gap-2">
-                                        <img src="img/chelsea.png" alt="Chelsea FC" class="w-6 h-6 object-contain">
-                                        <span>เชลซี (Chelsea FC)</span>
-                                        </div>
+                                    <span class="text-xs text-cyan-300 block mb-1">🛡️ ทีมสโมสรโปรด</span>
+                                    <div class="flex items-center gap-2.5">
+                                        <img src="img/chelsea.png" alt="Chelsea FC" class="w-7 h-7 rounded-full object-cover flex-shrink-0">
+                                        <span class="font-heading font-semibold text-sm sm:text-base text-white">เชลซี (Chelsea FC)</span>
+                                    </div>
                                 </div>
                                 <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                                    <span class="text-xs text-emerald-300 block mb-1">🌟 นักเตะในดวงใจ</span>
+                                    <span class="text-xs text-cyan-300 block mb-1">🌟 นักเตะในดวงใจ</span>
                                     <p data-editable="true" data-key="fb-player" class="font-heading font-semibold text-sm sm:text-base text-white">
                                         เอเดน อาซาร์ (Eden Hazard)
                                     </p>
                                 </div>
                                 <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                                    <span class="text-xs text-emerald-300 block mb-1">🏃 ตำแหน่งที่ชอบเล่น</span>
+                                    <span class="text-xs text-cyan-300 block mb-1">🏃 ตำแหน่งที่ชอบเล่น</span>
                                     <p data-editable="true" data-key="fb-position" class="font-heading font-semibold text-sm sm:text-base text-white">
                                         กองกลางตัวรุก (CAM)
                                     </p>
                                 </div>
                                 <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-                                    <span class="text-xs text-emerald-300 block mb-1">📺 ลีกที่ติดตามประจำ</span>
+                                    <span class="text-xs text-cyan-300 block mb-1">📺 ลีกที่ติดตามประจำ</span>
                                     <p data-editable="true" data-key="fb-league" class="font-heading font-semibold text-sm sm:text-base text-white">
                                         พรีเมียร์ลีก & ลีกในยุโรปอื่นๆ
                                     </p>
                                 </div>
                             </div>
 
-                            <!-- พื้นที่เขียนมุมมอง / บันทึกหลังเกม (ปูทางไปสู่การทำบล็อกบอลในอนาคต) -->
-                            <div class="p-5 rounded-2xl bg-slate-950/60 border border-emerald-500/20">
+                            <!-- พื้นที่เขียนมุมมอง / บันทึกหลังเกม -->
+                            <div class="p-5 rounded-2xl bg-slate-950/60 border border-blue-500/25">
                                 <div class="flex items-center justify-between gap-2 mb-2">
-                                    <span class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
+                                    <span class="text-xs font-semibold text-cyan-400 flex items-center gap-1.5">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                         </svg>
@@ -499,11 +519,8 @@
                         </div>
                     </article>
 
-
-
-
                     <!-- =========================================================
-                         MODULAR CARD 2: เพลง
+                         MODULAR CARD 2: เพลง & ภาพยนตร์
                          ========================================================= -->
                     <article data-category="music" class="interest-card rounded-3xl bg-white dark:bg-slate-900 p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 shadow-sm card-hover flex flex-col justify-between">
                         <div>
@@ -521,9 +538,9 @@
                                 </div>
                             </div>
                             <p data-editable="true" data-key="int-music-desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-                                ชอบฟังเพลง 2ectasy,Blackheart,Daniel Daesar,The weeknd และหลายๆคน  ระหว่างทำงานหรือเดินทางหรือออกกำลังกาย
+                                ชอบฟังเพลง 2ectasy,Blackheart,Daniel Daesar,The weeknd และหลายๆคน ระหว่างทำงานหรือเดินทางหรือออกกำลังกาย
                             </p>
-                            <p data-editable="true" data-key="int-music-desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                            <p data-editable="true" data-key="int-movie-desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
                                 ภาพยนตร์จะชอบแนวการเมือง แต่แนวอื่นก็ดูได้
                             </p>
                         </div>
@@ -535,13 +552,13 @@
                     </article>
 
                     <!-- =========================================================
-                         MODULAR CARD 3: เกม & เทคโนโลยี (ตัวอย่างหมวดไลฟ์สไตล์/เทค)
+                         MODULAR CARD 3: เกม & เทคโนโลยี
                          ========================================================= -->
                     <article data-category="lifestyle" class="interest-card rounded-3xl bg-white dark:bg-slate-900 p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 shadow-sm card-hover flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between gap-3 mb-4">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl">
+                                    <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-2xl">
                                         🎮
                                     </div>
                                     <div>
@@ -570,7 +587,7 @@
                         <div>
                             <div class="flex items-center justify-between gap-3 mb-4">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl">
+                                    <div class="w-12 h-12 rounded-2xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center text-2xl">
                                         ☕
                                     </div>
                                     <div>
@@ -591,8 +608,6 @@
                             <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-medium">#ถ่ายภาพ</span>
                         </div>
                     </article>
-
-                
 
                 </div>
             </div>
@@ -635,7 +650,7 @@
 
                     <!-- Email (กดคัดลอกอีเมล) -->
                     <button onclick="copyContactText('kasidit.kk7@gmail.com', 'คัดลอกอีเมลเรียบร้อยแล้ว!')" type="button"
-                        class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-emerald-600 text-white text-sm font-medium transition-colors flex items-center gap-2 cursor-pointer">
+                        class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-blue-600 text-white text-sm font-medium transition-colors flex items-center gap-2 cursor-pointer">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         <span data-editable="true" data-key="contact-email">kasidit.kk7@gmail.com</span>
                     </button>
@@ -645,7 +660,7 @@
             <!-- ลิขสิทธิ์และปุ่มกลับขึ้นด้านบน -->
             <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
                 <p>© <span id="currentYear"></span> Personal Hub Website. ออกแบบเพื่อการเติบโตและข้อมูลที่สามารถเปิดเผยได้</p>
-                <a href="#home" class="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-1">
+                <a href="#home" class="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1">
                     <span>กลับขึ้นด้านบน</span>
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
                 </a>
@@ -655,12 +670,9 @@
 
 
     <!-- =====================================================================
-         JAVASCRIPT LOGIC (จัดการธีม, โหมดแก้ไขข้อความ, ตัวกรอง และการเพิ่มข้อมูล)
+         JAVASCRIPT LOGIC (จัดการธีม, ตัวกรอง และการคัดลอกข้อความ)
          ===================================================================== -->
     <script>
-        // ---------------------------------------------------------------------
-        // 1. Safe Storage Helper (ป้องกัน Error กรณีเปิดในสภาพแวดล้อมที่จำกัด Storage)
-        // ---------------------------------------------------------------------
         const safeStorage = {
             get(key) {
                 try {
@@ -672,9 +684,7 @@
             set(key, value) {
                 try {
                     window.localStorage.setItem(key, value);
-                } catch (e) {
-                    // ข้ามการบันทึกถ้าเบราว์เซอร์บล็อก
-                }
+                } catch (e) {}
             },
             remove(key) {
                 try {
@@ -683,31 +693,13 @@
             }
         };
 
-        // ---------------------------------------------------------------------
-        // 2. State Management & Initialization
-        // ---------------------------------------------------------------------
-        let isEditMode = false;
         let currentFilter = 'all';
-        let customInterests = [];
-        let customTimelines = [];
 
         window.addEventListener('DOMContentLoaded', () => {
-            // ตั้งค่าปีปัจจุบันใน Footer
             document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-            // โหลดธีมที่บันทึกไว้ หรือตรวจสอบธีมของระบบ
             initTheme();
-
-            // โหลดข้อความที่ผู้ใช้เคยแก้ไขไว้
-            loadSavedTexts();
-
-            // โหลดรายการสิ่งที่สนใจและ Timeline ที่ผู้ใช้เคยเพิ่มไว้
-            loadCustomItems();
         });
 
-        // ---------------------------------------------------------------------
-        // 3. ระบบสลับธีม Light Mode / Dark Mode
-        // ---------------------------------------------------------------------
         function initTheme() {
             const savedTheme = safeStorage.get('personal_hub_theme');
             if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -721,12 +713,8 @@
             const htmlEl = document.documentElement;
             const isDark = htmlEl.classList.toggle('dark');
             safeStorage.set('personal_hub_theme', isDark ? 'dark' : 'light');
-            showToast(isDark ? 'เปลี่ยนเป็นโหมดมืด (Dark Mode)' : 'เปลี่ยนเป็นโหมดสว่าง (Light Mode)');
         }
 
-        // ---------------------------------------------------------------------
-        // 4. ระบบเมนูมือถือ (Mobile Menu)
-        // ---------------------------------------------------------------------
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
@@ -736,78 +724,9 @@
             document.getElementById('mobileMenu').classList.add('hidden');
         }
 
-        // ---------------------------------------------------------------------
-        // 5. โหมดแก้ไขข้อความทันที (Quick Edit Mode)
-        // ---------------------------------------------------------------------
-        function toggleEditMode() {
-            isEditMode = !isEditMode;
-            const body = document.body;
-            const editBanner = document.getElementById('editBanner');
-            const editBtnText = document.getElementById('editBtnText');
-            const toggleBtn = document.getElementById('toggleEditBtn');
-            const editableElements = document.querySelectorAll('[data-editable="true"]');
-
-            if (isEditMode) {
-                body.classList.add('edit-mode-active');
-                editBanner.classList.remove('hidden');
-                editBtnText.textContent = 'กำลังแก้ไข...';
-                toggleBtn.classList.add('border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950');
-
-                editableElements.forEach(el => {
-                    el.setAttribute('contenteditable', 'true');
-                    el.addEventListener('blur', saveEditableContent);
-                });
-                showToast('เปิดโหมดแก้ไขแล้ว คลิกที่ข้อความเพื่อแก้ไขได้ทันที');
-            } else {
-                body.classList.remove('edit-mode-active');
-                editBanner.classList.add('hidden');
-                editBtnText.textContent = 'โหมดแก้ไขข้อความ';
-                toggleBtn.classList.remove('border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950');
-
-                editableElements.forEach(el => {
-                    el.removeAttribute('contenteditable');
-                });
-                showToast('บันทึกข้อมูลเรียบร้อยแล้ว');
-            }
-        }
-
-        function saveEditableContent(event) {
-            const el = event.target;
-            const key = el.getAttribute('data-key');
-            if (!key) return;
-
-            const savedData = JSON.parse(safeStorage.get('personal_hub_texts') || '{}');
-            savedData[key] = el.innerText.trim();
-            safeStorage.set('personal_hub_texts', JSON.stringify(savedData));
-        }
-
-        function loadSavedTexts() {
-            const savedData = JSON.parse(safeStorage.get('personal_hub_texts') || '{}');
-            Object.keys(savedData).forEach(key => {
-                const el = document.querySelector(`[data-key="${key}"]`);
-                if (el && savedData[key]) {
-                    el.innerText = savedData[key];
-                }
-            });
-        }
-
-        function resetAllData() {
-            safeStorage.remove('personal_hub_texts');
-            safeStorage.remove('personal_hub_interests');
-            safeStorage.remove('personal_hub_timelines');
-            showToast('กำลังคืนค่าเริ่มต้น...');
-            setTimeout(() => {
-                window.location.reload();
-            }, 600);
-        }
-
-        // ---------------------------------------------------------------------
-        // 6. ระบบกรองหมวดหมู่สิ่งที่สนใจ (Category Filter)
-        // ---------------------------------------------------------------------
         function filterInterests(category) {
             currentFilter = category;
             
-            // อัปเดตสถานะปุ่ม Filter
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 if (btn.getAttribute('data-filter') === category) {
                     btn.classList.add('bg-white', 'dark:bg-slate-700', 'text-slate-900', 'dark:text-white', 'shadow-sm', 'font-semibold');
@@ -818,7 +737,6 @@
                 }
             });
 
-            // แสดง/ซ่อนการ์ดตามหมวดหมู่
             document.querySelectorAll('.interest-card').forEach(card => {
                 const cardCat = card.getAttribute('data-category');
                 if (category === 'all' || cardCat === category) {
@@ -829,242 +747,20 @@
             });
         }
 
-        // ---------------------------------------------------------------------
-        // 7. ระบบเพิ่มสิ่งที่สนใจใหม่ & เพิ่ม Timeline (Dynamic Modular Items)
-        // ---------------------------------------------------------------------
-        function openInterestModal() {
-            const modal = document.getElementById('interestModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeInterestModal() {
-            const modal = document.getElementById('interestModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        function selectEmoji(emoji) {
-            document.getElementById('interestEmoji').value = emoji;
-            document.querySelectorAll('.emoji-opt').forEach(btn => {
-                if (btn.textContent.trim() === emoji) {
-                    btn.classList.add('border-2', 'border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950');
-                    btn.classList.remove('border-slate-200', 'dark:border-slate-700');
-                } else {
-                    btn.classList.remove('border-2', 'border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950');
-                    btn.classList.add('border', 'border-slate-200', 'dark:border-slate-700');
-                }
-            });
-        }
-
-        function handleAddInterest(event) {
-            event.preventDefault();
-            const emoji = document.getElementById('interestEmoji').value || '✨';
-            const title = document.getElementById('interestTitle').value.trim();
-            const category = document.getElementById('interestCategory').value;
-            const desc = document.getElementById('interestDesc').value.trim();
-            const tagsRaw = document.getElementById('interestTags').value.trim();
-
-            if (!title || !desc) return;
-
-            const tags = tagsRaw
-                ? tagsRaw.split(',').map(t => t.trim()).filter(Boolean)
-                : [category === 'football' ? 'กีฬา' : 'ไลฟ์สไตล์'];
-
-            const newItem = {
-                id: Date.now().toString(),
-                emoji,
-                title,
-                category,
-                desc,
-                tags
-            };
-
-            customInterests.push(newItem);
-            safeStorage.set('personal_hub_interests', JSON.stringify(customInterests));
-
-            renderCustomInterestCard(newItem);
-            filterInterests(currentFilter);
-
-            event.target.reset();
-            selectEmoji('⚽');
-            closeInterestModal();
-            showToast(`เพิ่ม "${title}" ลงในสิ่งที่สนใจแล้ว!`);
-        }
-
-        function renderCustomInterestCard(item) {
-            const addBtn = document.getElementById('addInterestCardBtn');
-            const article = document.createElement('article');
-            article.setAttribute('data-category', item.category);
-            article.setAttribute('data-custom-id', item.id);
-            article.className = 'interest-card rounded-3xl bg-white dark:bg-slate-900 p-6 sm:p-7 border border-slate-200/80 dark:border-slate-800 shadow-sm card-hover flex flex-col justify-between relative group';
-
-            const catLabel = item.category === 'football' ? 'กีฬา & ฟุตบอล' : 'ไลฟ์สไตล์ & อื่นๆ';
-            const tagsHtml = item.tags.map(tag => 
-                `<span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-medium">#${escapeHtml(tag)}</span>`
-            ).join('');
-
-            article.innerHTML = `
-                <div>
-                    <div class="flex items-start justify-between gap-3 mb-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl">
-                                ${escapeHtml(item.emoji)}
-                            </div>
-                            <div>
-                                <span class="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">${catLabel}</span>
-                                <h3 class="font-heading text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                                    ${escapeHtml(item.title)}
-                                </h3>
-                            </div>
-                        </div>
-                        <button onclick="deleteCustomInterest('${item.id}')" type="button" title="ลบรายการนี้"
-                            class="p-2 rounded-xl text-slate-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/50 transition-colors cursor-pointer">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                        </button>
-                    </div>
-                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-                        ${escapeHtml(item.desc)}
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-2 pt-3 border-t border-slate-100 dark:border-slate-800">
-                    ${tagsHtml}
-                </div>
-            `;
-
-            addBtn.parentNode.insertBefore(article, addBtn);
-        }
-
-        function deleteCustomInterest(id) {
-            customInterests = customInterests.filter(item => item.id !== id);
-            safeStorage.set('personal_hub_interests', JSON.stringify(customInterests));
-            const card = document.querySelector(`[data-custom-id="${id}"]`);
-            if (card) card.remove();
-            showToast('ลบรายการสิ่งที่สนใจเรียบร้อยแล้ว');
-        }
-
-        // ระบบเพิ่มรายการ Timeline
-        function openTimelineModal() {
-            const modal = document.getElementById('timelineModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeTimelineModal() {
-            const modal = document.getElementById('timelineModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        function handleAddTimeline(event) {
-            event.preventDefault();
-            const year = document.getElementById('tlYearInput').value.trim();
-            const title = document.getElementById('tlTitleInput').value.trim();
-            const desc = document.getElementById('tlDescInput').value.trim();
-
-            if (!year || !title || !desc) return;
-
-            const newTl = {
-                id: Date.now().toString(),
-                year,
-                title,
-                desc
-            };
-
-            customTimelines.push(newTl);
-            safeStorage.set('personal_hub_timelines', JSON.stringify(customTimelines));
-            renderCustomTimelineItem(newTl);
-
-            event.target.reset();
-            closeTimelineModal();
-            showToast('เพิ่มช่วงเวลาใน Timeline เรียบร้อยแล้ว');
-        }
-
-        function renderCustomTimelineItem(item) {
-            const container = document.getElementById('customTimelineList');
-            const div = document.createElement('div');
-            div.className = 'relative pl-6 sm:pl-8';
-            div.setAttribute('data-tl-id', item.id);
-            div.innerHTML = `
-                <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-white dark:ring-slate-900"></span>
-                <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                    <div class="flex flex-wrap items-center gap-2">
-                        <span class="px-2.5 py-0.5 rounded-lg bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 text-xs font-bold">
-                            ${escapeHtml(item.year)}
-                        </span>
-                        <h4 class="font-heading font-semibold text-base sm:text-lg text-slate-900 dark:text-white">
-                            ${escapeHtml(item.title)}
-                        </h4>
-                    </div>
-                    <button onclick="deleteCustomTimeline('${item.id}')" type="button" class="text-xs text-slate-400 hover:text-rose-500 cursor-pointer">ลบ</button>
-                </div>
-                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    ${escapeHtml(item.desc)}
-                </p>
-            `;
-            container.appendChild(div);
-        }
-
-        function deleteCustomTimeline(id) {
-            customTimelines = customTimelines.filter(item => item.id !== id);
-            safeStorage.set('personal_hub_timelines', JSON.stringify(customTimelines));
-            const el = document.querySelector(`[data-tl-id="${id}"]`);
-            if (el) el.remove();
-            showToast('ลบรายการ Timeline เรียบร้อยแล้ว');
-        }
-
-        function loadCustomItems() {
-            try {
-                const savedInterests = JSON.parse(safeStorage.get('personal_hub_interests') || '[]');
-                if (Array.isArray(savedInterests)) {
-                    customInterests = savedInterests;
-                    customInterests.forEach(renderCustomInterestCard);
-                }
-                const savedTimelines = JSON.parse(safeStorage.get('personal_hub_timelines') || '[]');
-                if (Array.isArray(savedTimelines)) {
-                    customTimelines = savedTimelines;
-                    customTimelines.forEach(renderCustomTimelineItem);
-                }
-            } catch (e) {}
-        }
-
-        // ---------------------------------------------------------------------
-        // 8. Utilities: คัดลอกข้อความลง Clipboard & แสดง Toast Notification
-        // ---------------------------------------------------------------------
         function copyContactText(text, successMsg) {
-            const tempInput = document.createElement('textarea');
-            tempInput.value = text;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert(successMsg);
+                });
+            } else {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = text;
+                document.body.appendChild(tempInput);
+                tempInput.select();
                 document.execCommand('copy');
-                showToast(successMsg);
-            } catch (err) {
-                showToast('ไม่สามารถคัดลอกอัตโนมัติได้ กรุณาคัดลอกด้วยตนเอง');
+                document.body.removeChild(tempInput);
+                alert(successMsg);
             }
-            document.body.removeChild(tempInput);
-        }
-
-        let toastTimer;
-        function showToast(message) {
-            const toast = document.getElementById('toastNotification');
-            const toastMsg = document.getElementById('toastMessage');
-            toastMsg.textContent = message;
-
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            clearTimeout(toastTimer);
-            toastTimer = setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-                toast.classList.remove('translate-y-0', 'opacity-100');
-            }, 3000);
-        }
-
-        function escapeHtml(str) {
-            const div = document.createElement('div');
-            div.textContent = str;
-            return div.innerHTML;
         }
     </script>
 </body>
